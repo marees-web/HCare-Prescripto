@@ -49,12 +49,12 @@ const AddDoctor = () => {
             setDocImg(false);
             setName('');
             setEmail('');
-            setPassword('1234567890');
-            setAddress1('57th Cross, Richmond');
-            setAddress2('Circle, Ring Road, London');
-            setDegree('MBBS');
+            setPassword('');
+            setAddress1('');
+            setAddress2('');
+            setDegree('');
             setFees('');
-            setAbout('Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.');
+            setAbout('');
         }else{
             toast.error(data.message)
         }
