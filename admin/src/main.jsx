@@ -5,8 +5,10 @@ import { BrowserRouter } from "react-router-dom";
 import AdminContextProvider from "./context/adminContext.jsx";
 import DoctorContextProvider from "./context/DoctorContext.jsx";
 import AppContextProvider from "./context/appContext.jsx";
+import { StrictMode } from "react";
 
 createRoot(document.getElementById("root")).render(
+  <StrictMode>
   <BrowserRouter>
     <AdminContextProvider>
       <DoctorContextProvider>
@@ -16,4 +18,5 @@ createRoot(document.getElementById("root")).render(
       </DoctorContextProvider>
     </AdminContextProvider>
   </BrowserRouter>,
+  </StrictMode>
 );
