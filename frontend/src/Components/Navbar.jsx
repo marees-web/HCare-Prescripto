@@ -1,12 +1,19 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import {assets} from '../assets/admin/assets'
 import { assetts } from '../assets/frontendass/assetts'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { AppContext } from '../context/AppContext'
 const Navbar = () => {
     const navigate=useNavigate();
 
     const [showMenu, setShowMenu] = useState(false);
-    const [token, setToken] = useState(true);
+    const {token,setToken,userData}=useContext(AppContext);
+
+    const logout=()=>{
+        setToken(false)
+        localStorage.removeItem('token')
+    }
+    
   return (
     <div className='flex items-center justify-between text-sm py-4 mb-5 border-b border-b-gray-400 '>
         <img onClick={()=>navigate('/')} className='w-44 cursor-pointer' src={assets.admin_logo}/>
@@ -30,15 +37,15 @@ const Navbar = () => {
         </ul>
         <div className='flex items-center gap-4'>
             {
-                token ?
+                token && userData ?
                  <div className='flex items-center group relative gap-2 cursor-pointer'>
-                   <img  className=' w-8  rounded-full'src={assetts.profile_pic} alt=''/>
+                   <img  className=' w-8  rounded-full'src={userData.image} alt=''/>
                    <img className='w-2.5 '  src={assetts.dropdown_icon} alt=''/>
                    <div className='absolute top-0 right-0 pt-14 text-base font-medium text-gray-500 z-20 hidden group-hover:block'>
                     <div className='min-w-48 bg-stone-100 rounded-lg flex flex-col gap-4 p-4'>
                         <p onClick={()=>navigate('/my-profile')} className='px-5 hover:text-black hover:bg-primary cursor-pointer hover:rounded'>My Profile</p>
                         <p onClick={()=>navigate('/my-appointments')} className='px-2 hover:text-black hover:bg-primary cursor-pointer hover:rounded'>My Appointments</p>
-                        <p onClick={()=>setToken(false)} className='px-5 hover:text-black hover:bg-primary cursor-pointer hover:rounded'>Logout</p>
+                        <p onClick={logout} className='px-5 hover:text-black hover:bg-primary cursor-pointer hover:rounded'>Logout</p>
                     </div>
                    </div>
                 </div>
