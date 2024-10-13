@@ -16,7 +16,7 @@ const Navbar = () => {
     <div className='flex justify-between items-center px-4 sm:px-10 py-3 border-b bg-white'>
         <div className='flex items-center gap-2 font-semibold text-xs'>
             <img className='w-36 cursor-pointer' src={assets.admin_logo} alt="" />
-            <p className='border px-2.5 py-0.5 rounded-full border-gray-500 text-gray-600'>{aToken ? 'Admin' : 'Doctor'}</p>
+            <p className='border px-2.5 py-0.5 rounded-full border-gray-500 text-gray-600 hover:bg-primary hover:text-white'>{aToken ? 'Admin' : 'Doctor'}</p>
         </div>
         <button onClick={logout} className='bg-primary text-white font-medium text-sm px-10 py-2 rounded-full transition-all duration-300 hover:scale-105'>Logout</button>
     </div>
