@@ -14,7 +14,7 @@ const DoctorDashboard = () => {
   return (
     dashData && (
       <div className="w-full max-w-6xl m-5">
-        <p className="mb-3 text-lg font-medium bg-primary text-white px-6 py-3 w-full  rounded">
+        <p className="mb-3 text-2xl font-medium bg-primary text-white px-6 py-3 w-full  rounded">
           Dashboard
         </p>
 

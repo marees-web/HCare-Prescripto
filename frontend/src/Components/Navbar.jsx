@@ -43,9 +43,9 @@ const Navbar = () => {
                    <img className='w-2.5 '  src={assetts.dropdown_icon} alt=''/>
                    <div className='absolute top-0 right-0 pt-14 text-base font-medium text-gray-500 z-20 hidden group-hover:block'>
                     <div className='min-w-48 bg-stone-100 rounded-lg flex flex-col gap-4 p-4'>
-                        <p onClick={()=>navigate('/my-profile')} className='px-2 py-2 hover:text-black hover:bg-primary cursor-pointer hover:rounded'>My Profile</p>
-                        <p onClick={()=>navigate('/my-appointments')} className='px-2 py-2 hover:text-black hover:bg-primary cursor-pointer hover:rounded'>My Appointments</p>
-                        <p onClick={logout} className='px-2 py-2 hover:text-black hover:bg-primary cursor-pointer hover:rounded'>Logout</p>
+                        <p onClick={()=>navigate('/my-profile')} className='px-2 py-2  hover:bg-primary cursor-pointer hover:text-white hover:rounded'>My Profile</p>
+                        <p onClick={()=>navigate('/my-appointments')} className='px-2 py-2 hover:text-white hover:bg-primary cursor-pointer hover:rounded'>My Appointments</p>
+                        <p onClick={logout} className='px-2 py-2 hover:text-white hover:bg-primary cursor-pointer hover:rounded'>Logout</p>
                     </div>
                    </div>
                 </div>
