@@ -44,7 +44,8 @@ const Login = () => {
 
     
   return (
-    <form onSubmit={onSubmitHandler} className='min-h-[80vh] flex items-center' >
+    <div className="w-full h-full bg-gradient-to-r from-primary/20 via-primary/50 to-primary/90 rounded  shadow-primary/50" >
+    <form onSubmit={onSubmitHandler} className='min-h-[100vh] flex items-center shadow-3xl shadow-inner' >
         <div className='flex flex-col gap-3 m-auto items-start p-8 min-w-[340px] sm:min-w-96 border rounded-xl text-gray-500 text-sm shadow-lg'>
             <p className='text-3xl font-bold m-auto'><span className='text-primary'>{state} </span>Login</p>
             <div className='w-full'>
@@ -64,6 +65,7 @@ const Login = () => {
         </div>
 
     </form>
+    </div>
     
   )
 }

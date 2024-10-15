@@ -45,7 +45,9 @@ const Login = () => {
     }
   }, [token])
   return (
-    <form onSubmit={onSubmitHandler} className="min-h-[80vh] flex items-center">
+    
+    <div className="w-full h-full bg-gradient-to-r from-primary/20 via-primary/50 to-primary/90 rounded shadow-2xl shadow-primary/50" >
+    <form onSubmit={onSubmitHandler} className="min-h-[80vh] flex items-center shadow-[0_35px_60px_-15px_rgba(0,0,0,0.8)] ">
       <div className="flex flex-col gap-3 m-auto items-start p-8 min-w-[340px] sm:min-w-96 border rounded-xl text-zinc-600 text-sm shadow-lg">
         <p className="text-2xl font-semibold">
           {state === "Sign Up" ? "Create Account" : "Login"}
@@ -113,6 +115,8 @@ const Login = () => {
         )}
       </div>
     </form>
+    </div>
+    
   );
 };
 
