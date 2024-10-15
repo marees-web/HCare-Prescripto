@@ -58,7 +58,13 @@ const DoctorProfile = () => {
                 {/*---Doc About-- */}
                 <div>
                     <p  className='flex items-center gap-1 text-md font-medium text-neutral-800 mt-3'>About:</p>
-                    <p className='text-sm text-gray-600 max-w-[700px] mt-1'>{profileData.about}</p>
+                    <p className='text-sm text-gray-600 max-w-[700px] mt-1'>
+                    {
+                         isEdit
+                        ? <textarea onChange={(e) => setProfileData(prev => ({ ...prev, about: e.target.value }))} type='text' className='w-full outline-primary p-2' rows={8} value={profileData.about} />
+                         : profileData.about
+                    }
+                    </p>
                 </div>
                 <p className='text-gray-600 font-medium mt-4'>
                     Appointment Fees: <span className='text-gray-800'>{currency} 
