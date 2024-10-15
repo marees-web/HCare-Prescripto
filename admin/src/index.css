@@ -11,3 +11,11 @@
 *{
   font-family: Outfit;
 }
+body{
+  background: url('./assets/image.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur();
+  backdrop-filter: opacity(60);
+}
