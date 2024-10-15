@@ -3,6 +3,7 @@ import {assets} from '../assets/admin/assets'
 import { assetts } from '../assets/frontendass/assetts'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
+import { VscAccount } from "react-icons/vsc";
 const Navbar = () => {
     const navigate=useNavigate();
 
@@ -51,7 +52,7 @@ const Navbar = () => {
                 </div>
                  :
                 <button onClick={()=>navigate('/login')} 
-                className='bg-primary text-white px-8 py-3 rounded-full font-medium hidden md:block hover:bg-primary/80'>Create Account</button>
+                className='bg-primary text-white px-8 py-3 rounded-full relative font-medium hidden md:block hover:bg-primary/80'> Create Account <span className='absolute top-[15px] left-2 px-1  w-4 h-1'><VscAccount/></span></button>
             }
             <img onClick={()=>setShowMenu(true)} className='w-6 md:hidden' src={assetts.menu_icon} alt="" />
                             {/*---mobile menu --- */}

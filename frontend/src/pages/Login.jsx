@@ -3,6 +3,9 @@ import { AppContext } from "../context/AppContext";
 import axios from 'axios'
 import {toast} from 'react-toastify'
 import { useNavigate } from "react-router-dom";
+import { FaUserAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { FaLock } from "react-icons/fa";
 
 const Login = () => {
   const {backendUrl,token,setToken}=useContext(AppContext)
@@ -46,9 +49,9 @@ const Login = () => {
   }, [token])
   return (
     
-    <div className="w-full h-full bg-gradient-to-r from-primary/20 via-primary/50 to-primary/90 rounded shadow-2xl shadow-primary/50" >
-    <form onSubmit={onSubmitHandler} className="min-h-[80vh] flex items-center shadow-[0_35px_60px_-15px_rgba(0,0,0,0.8)] ">
-      <div className="flex flex-col gap-3 m-auto items-start p-8 min-w-[340px] sm:min-w-96 border rounded-xl text-zinc-600 text-sm shadow-lg">
+    <div >
+    <form onSubmit={onSubmitHandler} className="min-h-[80vh] bg-pattern relative bg-no-repeat bg-cover backdrop:opacity-5 flex items-center rounded shadow-[0_35px_60px_-15px_rgba(0,0,0,0.8)] ">
+      <div className="flex flex-col gap-3 m-20  items-start p-8 min-w-[340px] bg-white/80 sm:min-w-96 border rounded-xl text-zinc-600 text-sm shadow-lg">
         <p className="text-2xl font-semibold">
           {state === "Sign Up" ? "Create Account" : "Login"}
         </p>
@@ -57,7 +60,7 @@ const Login = () => {
           appointment
         </p>
         {state === "Sign Up" && (
-          <div className="w-full">
+          <div className="w-full relative">
             <p>Full Name</p>
             <input
               className="border border-zinc-300 rounded w-full p-2 mt-1"
@@ -66,10 +69,11 @@ const Login = () => {
               value={name}
               required
             />
+            <FaUserAlt className="absolute top-[35px] right-0 h-5  w-20 rounded-full" />
           </div>
         )}
 
-        <div className="w-full">
+        <div className="w-full relative">
           <p>Email</p>
           <input
             className="border border-zinc-300 rounded w-full p-2 mt-1"
@@ -78,8 +82,9 @@ const Login = () => {
             value={email}
             required
           />
+          <MdEmail className="absolute top-[35px] right-0 w-20 h-5 rounded-full" />
         </div>
-        <div className="w-full">
+        <div className="w-full relative">
           <p>Password</p>
           <input
             className="border border-zinc-300 rounded w-full p-2 mt-1"
@@ -88,6 +93,7 @@ const Login = () => {
             value={password}
             required
           />
+          <FaLock className="absolute top-[35px] right-0 w-20 h-5 rounded-full" />
         </div>
         <button type="submit" className="bg-primary text-white rounded-lg w-full py-2 text-base hover:scale-105 transition-all duration-300">
           {state === "Sign Up" ? "Create Account" : "Login"}
