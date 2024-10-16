@@ -50,8 +50,8 @@ const Login = () => {
   return (
     
     <div >
-    <form onSubmit={onSubmitHandler} className="min-h-[80vh] bg-pattern relative bg-no-repeat bg-cover backdrop:opacity-5 flex items-center rounded shadow-[0_35px_60px_-15px_rgba(0,0,0,0.8)] ">
-      <div className="flex flex-col gap-3 m-20  items-start p-8 min-w-[340px] bg-white/80 sm:min-w-96 border rounded-xl text-zinc-600 text-sm shadow-lg">
+    <form onSubmit={onSubmitHandler} className="min-h-[80vh] bg-pattern relative bg-no-repeat bg-cover saturate-50 backdrop:opacity-5 flex items-center rounded shadow-[0_35px_60px_-15px_rgba(0,0,0,0.8)] ">
+      <div className="flex flex-col gap-3 sm:m-auto  md:m-20  items-start p-8 min-w-[340px] bg-white/80 saturate-200 sm:min-w-96 border rounded-xl text-zinc-600 text-sm shadow-lg">
         <p className="text-2xl font-semibold">
           {state === "Sign Up" ? "Create Account" : "Login"}
         </p>
