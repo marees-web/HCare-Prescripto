@@ -4,8 +4,8 @@ import { AdminContext } from '../context/AdminContext';
 import axios from 'axios'
 import { toast } from 'react-toastify';
 import { DoctorContext } from '../context/DoctorContext';
-import { MdAttachEmail } from "react-icons/md";
-import { TbPasswordUser } from "react-icons/tb";
+import { MdEmail } from "react-icons/md";
+import { FaLock } from "react-icons/fa";
 
 const Login = () => {
     const [state, setState] = useState('Admin');
@@ -50,13 +50,15 @@ const Login = () => {
     <form onSubmit={onSubmitHandler} className='min-h-[80vh] flex items-center'>
       <div className='flex flex-col gap-3 m-auto items-start p-8 min-w-[340px] sm:min-w-96 border rounded-xl text-white text-sm shadow-2xl'>
         <p className='text-2xl font-semibold m-auto'><span className='text-primary text-2xl font-bold'>{state}</span> Login</p>
-        <div className='w-full '>
+        <div className='w-full relative'>
           <p>Email</p>
-          <input onChange={(e) => setEmail(e.target.value)} value={email} className='border border-[#DADADA] rounded w-full p-2 mt-1' type="email" required />
+          <input onChange={(e) => setEmail(e.target.value)} value={email} className='border border-[#DADADA] text-black rounded w-full p-2 mt-1' type="email" required />
+          <MdEmail className="absolute top-[35px] right-0 w-20 h-5 text-primary rounded-full" />
         </div>
-        <div className='w-full '>
+        <div className='w-full relative '>
           <p>Password</p>
-          <input onChange={(e) => setPassword(e.target.value)} value={password} className='border border-[#DADADA] rounded w-full p-2 mt-1' type="password" required />
+          <input onChange={(e) => setPassword(e.target.value)} value={password} className='border text-black border-[#DADADA] rounded w-full p-2 mt-1' type="password" required />
+          <FaLock className="absolute top-[35px] right-0 w-20 h-5 text-primary rounded-full" />
         </div>
         <button className='bg-primary text-white w-full py-2 rounded-md text-base'>Login</button>
         {
