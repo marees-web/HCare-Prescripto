@@ -16,7 +16,8 @@ const DoctorProfile = () => {
             const updateData={
                 address:profileData.address,
                 fees:profileData.fees,
-                available:profileData.available
+                available:profileData.available,
+                about:profileData.about
             }
             const {data}=await axios.post(backendUrl + '/api/doctor/update-profile',updateData,{headers:{dToken}})
            
