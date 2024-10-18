@@ -42,13 +42,13 @@ const DoctorsList = () => {
         
        </div>
        <div className='flex justify-center mt-10 ml-0 h-50 '>
-         <button className='bg-gray-400 border rounded px-4 py-2 text-black text-lg font-medium hover:bg-primary hover:text-white hover:scale-75 transition-all duration-150' onClick={()=>paginate(1)}>First</button>
-         <button className='bg-gray-400 border rounded px-4 py-2 text-black text-lg font-medium hover:bg-primary hover:text-white hover:scale-75 transition-all duration-150' disabled={currentPage === 1} onClick={()=>paginate(currentPage -1)}>Prev</button>
+         <button className= {currentPage === 1 ? "bg-gray-400 border rounded px-4 py-2 text-slate-300 text-lg font-medium" : "bg-gray-400 border rounded px-4 py-2 text-black text-lg font-medium hover:bg-primary hover:text-white hover:scale-75 transition-all duration-150"}  onClick={()=>paginate(1)}>First</button>
+         <button className= {currentPage === 1 ? "bg-gray-400 border rounded px-4 py-2 text-slate-300 text-lg font-medium" : "bg-gray-400 border rounded px-4 py-2 text-black text-lg font-medium hover:bg-primary hover:text-white hover:scale-75 transition-all duration-150"}  disabled={currentPage === 1} onClick={()=>paginate(currentPage -1)}>Prev</button>
          {new Array(totalpages).fill(0).map((_,index)=>{
           return <button className={currentPage === index+1 ? "bg-primary border rounded px-4 py-2 text-black text-lg font-medium hover:scale-75 transition-all duration-150 " : "bg-gray-400 border rounded px-4 py-2 text-black text-lg font-medium hover:bg-primary hover:text-white hover:scale-75 transition-all duration-150"} onClick={()=>paginate(index + 1)} key={index + 1}>{index + 1}</button>
          })}
-         <button className='bg-gray-400 border rounded px-4 py-2 text-black text-lg font-medium hover:bg-primary hover:text-white hover:scale-75 transition-all duration-150' disabled={currentPage === totalpages} onClick={()=>paginate(currentPage + 1)}>Next</button>
-         <button className='bg-gray-400 border rounded px-4 py-2 text-black text-lg font-medium hover:bg-primary hover:text-white hover:scale-75 transition-all duration-150' onClick={()=>paginate(totalpages)}>Last</button>
+         <button className= {currentPage === totalpages ? "bg-gray-400 border rounded px-4 py-2 text-slate-300 text-lg font-medium" : "bg-gray-400 border rounded px-4 py-2 text-black text-lg font-medium hover:bg-primary hover:text-white hover:scale-75 transition-all duration-150"}   disabled={currentPage === totalpages} onClick={()=>paginate(currentPage + 1)}>Next</button>
+         <button className= {currentPage === totalpages ? "bg-gray-400 border rounded px-4 py-2 text-slate-300 text-lg font-medium" : "bg-gray-400 border rounded px-4 py-2 text-black text-lg font-medium hover:bg-primary hover:text-white hover:scale-75 transition-all duration-150"}  onClick={()=>paginate(totalpages)}>Last</button>
        </div>
     </div>
   )
