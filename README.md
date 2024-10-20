@@ -38,7 +38,7 @@ npm run dev
 # In backend directory
 npm run dev
 Visit the application at:
-http://localhost:5173
+http://localhost:2900
 Deployment
 The application is deployed on Render.com. You can access it here.
 Screenshot
